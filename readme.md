@@ -7,12 +7,13 @@ lisence is needed to use [OpenEye](https://www.eyesopen.com) applications and to
 
 
 ### Input datasets needed
-- Data_prep/get_refined_coconut.py and Data_prep/get_organism_sets.py
+- Data_prep/get_refined_coconut.py and Data_prep/get_organism_sets.py  
     coconut.sourceNP.csv: from https://coconut.naturalproducts.net/download MongoDB dump, version 2020-10
-- Preprocessing/preprocess_Zinc.py
+- Preprocessing/preprocess_Zinc.py  
     zinc20/ and zinc_catalogs/: in-stock subset and biogenic sets from ZINC 20 database: https://zinc20.docking.org/
-- Preprocessing/preprocessing_approveddrug.py
+- Preprocessing/preprocessing_approveddrug.py  
     approveddrug.sdf: from https://go.drugbank.com/, version 5.1.8
+    
     
 ### Algorithm to get ring systems from molecules
 Ring systems are defined as all atoms forming a ring, plus any proximate exocyclic atom(s) connected via any type of bond other than a single bond. Two rings sharing at least one atom (i.e. fused and spiro rings) are considered as one ring system.
@@ -23,9 +24,8 @@ In order to obtain the ring systems the following algorithm was applied to each 
 4. All other substituents are replaced by a hydrogen atom.
 From a single compound more than one ring system may be derived. Multiple occurrences of a specific ring system in one and the same molecule increase the count of ring systems by 1 
 
-'''
-RingSystems/RingSystemClass.py
-'''
+<code>RingSystems/RingSystemClass.py</code>
+
 
 ### Algorithm to identify if two molecules are identical (if there is no evidence that the molecules are not identical)
 In the scenario considering stereochemistry (i.e. tetrahedral atom configuration), pairs of molecules were tested for identity according to a procedure that builds on the evidence-based approach exemplified in Fig. 1b. The procedure returns TRUE for a pair of molecules, m1 and m2, if the two molecules are identical (more accurately, if there is no evidence that the molecules are not identical):
@@ -44,7 +44,5 @@ In the scenario considering stereochemistry (i.e. tetrahedral atom configuration
                     - return TRUE
     - return FALSE
 
-'''
-RingSystems/superpose.py
-'''
+<code>RingSystems/superpose.py</code>
 
