@@ -7,7 +7,7 @@ Anaconda (or minicoda) and Git should be installed.
 Lisence is needed to use [OpenEye](https://www.eyesopen.com) applications and toolkits.
 <code>
     git clone https://github.com/anya-chen/RingSystems
-    </code>
+    </code>  
 <code>
     cd RingSystems
     </code>
