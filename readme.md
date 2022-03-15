@@ -5,17 +5,26 @@ This is the code used in the cheminformatics analysis for ring systems in natura
 ### Requirements
 Anaconda (or minicoda) and Git should be installed. 
 Lisence is needed to use [OpenEye](https://www.eyesopen.com) applications and toolkits.
-<code>git clone https://github.com/anya-chen/RingSystems
-cd RingSystems
-conda env create -n ringsys -f environment.yml
-conda activate ringsys
-pip install -e .
+<code>
+    git clone https://github.com/anya-chen/RingSystems
+    </code>
+<code>
+    cd RingSystems
+    </code>
+<code>
+    conda env create -n ringsys -f environment.yml
+    </code>
+<code>
+    conda activate ringsys
+    </code>
+<code>
+    pip install -e .
 </code>
 If you are installing manually:
 Create ringsys env with python 3.8 and rdkit
-<code>conda create -n ringsys python=3.8
-conda activate ringsys
-conda install -c conda-forge rdkit</code>
+<code>conda create -n ringsys python=3.8</code>
+<code>conda activate ringsys</code>
+<code>conda install -c conda-forge rdkit</code>
 
 Install chembl_structure_pipline
 <code>conda install -c conda-forge chembl_structure_pipeline</code>
@@ -41,7 +50,8 @@ In order to obtain the ring systems the following algorithm was applied to each 
 1. Split of molecule into individual rings (with the RDKit function ringInfo). This process results in one or more ring atom sets.
 2. If two ring atom sets share at least one atom the sets are fused.
 3. The resulting ring systems (i.e. processed ring atom sets) are extended by all atoms directly connected to the ring via any type of bond other than a single bond.
-4. All other substituents are replaced by a hydrogen atom.
+4. All other substituents are replaced by a hydrogen atom.  
+
 From a single compound more than one ring system may be derived. Multiple occurrences of a specific ring system in one and the same molecule increase the count of ring systems by 1 
 
 
