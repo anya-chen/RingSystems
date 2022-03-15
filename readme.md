@@ -12,7 +12,7 @@ conda env create -n ringsys -f environment.yml
 conda activate ringsys  
 pip install -e .  
 ```
-If you are installing manually:  
+If you are installing manually/using only certain part:  
 - Create ringsys env with python 3.8 and rdkit  
 ```
 conda create -n ringsys python=3.8
@@ -27,7 +27,7 @@ conda install -c conda-forge rdkit
 
 ```conda install -c openeye openeye-toolkits```  
 
-- Install scikit-learn, numpy, pandas, seaborn
+- Install scikit-learn, numpy, pandas, seaborn...
 
 
 ### Input datasets needed
