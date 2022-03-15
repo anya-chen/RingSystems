@@ -32,11 +32,11 @@ conda install -c conda-forge rdkit
 
 ### Input datasets needed
 - <code>Data_prep/get_refined_coconut.py and Data_prep/get_organism_sets.py</code>  
-    <code>coconut.sourceNP.csv</code>: from https://coconut.naturalproducts.net/download MongoDB dump, version 2020-10
+    <code>coconut.sourceNP.csv</code>: from [COCONUT database](https://coconut.naturalproducts.net/download) MongoDB dump, version 2020-10
 - <code>Preprocessing/preprocess_Zinc.py</code>  
-    <code>zinc20/</code> and <code>zinc_catalogs/</code>: in-stock subset and biogenic sets from ZINC 20 database: https://zinc20.docking.org/
+    <code>zinc20/</code> and <code>zinc_catalogs/</code>: in-stock subset and biogenic sets from [ZINC 20 database](https://zinc20.docking.org/)
 - <code>Preprocessing/preprocessing_approveddrug.py</code>  
-    <code>approveddrug.sdf</code>: from https://go.drugbank.com/, version 5.1.8
+    <code>approveddrug.sdf</code>: from [DrugBank](https://go.drugbank.com/), version 5.1.8
     
     
 ### Algorithm to get ring systems from molecules
