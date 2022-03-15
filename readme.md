@@ -23,7 +23,7 @@ conda install -c conda-forge rdkit
     
 ```conda install -c conda-forge chembl_structure_pipeline```  
 
-- Install oepython  
+- Install oepython (openeye toolkits)  
 
 ```conda install -c openeye openeye-toolkits```  
 
