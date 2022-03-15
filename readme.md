@@ -3,7 +3,25 @@
 This is the code used in the cheminformatics analysis for ring systems in natural prodcuts, for more details please see the publication: XXX (to be added) 
 
 ### Requirements
-lisence is needed to use [OpenEye](https://www.eyesopen.com) applications and toolkits.
+Anaconda (or minicoda) and Git should be installed. 
+Lisence is needed to use [OpenEye](https://www.eyesopen.com) applications and toolkits.
+<code>git clone https://github.com/anya-chen/RingSystems
+cd RingSystems
+conda env create -n ringsys -f environment.yml
+conda activate ringsys
+pip install -e .
+</code>
+If you are installing manually:
+Create ringsys env with python 3.8 and rdkit
+<code>conda create -n ringsys python=3.8
+conda activate ringsys
+conda install -c conda-forge rdkit</code>
+
+Install chembl_structure_pipline
+<code>conda install -c conda-forge chembl_structure_pipeline</code>
+Install oepython
+<code>conda install -c openeye openeye-toolkits</code>
+Install scikit-learn, numpy, pandas, seaborn
 
 
 ### Input datasets needed
@@ -16,6 +34,8 @@ lisence is needed to use [OpenEye](https://www.eyesopen.com) applications and to
     
     
 ### Algorithm to get ring systems from molecules
+<code>RingSystems/RingSystemClass.py</code>
+
 Ring systems are defined as all atoms forming a ring, plus any proximate exocyclic atom(s) connected via any type of bond other than a single bond. Two rings sharing at least one atom (i.e. fused and spiro rings) are considered as one ring system.
 In order to obtain the ring systems the following algorithm was applied to each chemical structure with at least one ring:
 1. Split of molecule into individual rings (with the RDKit function ringInfo). This process results in one or more ring atom sets.
@@ -24,11 +44,12 @@ In order to obtain the ring systems the following algorithm was applied to each 
 4. All other substituents are replaced by a hydrogen atom.
 From a single compound more than one ring system may be derived. Multiple occurrences of a specific ring system in one and the same molecule increase the count of ring systems by 1 
 
-<code>RingSystems/RingSystemClass.py</code>
 
 
 ### Algorithm to identify if two molecules are identical (if there is no evidence that the molecules are not identical)
-In the scenario considering stereochemistry (i.e. tetrahedral atom configuration), pairs of molecules were tested for identity according to a procedure that builds on the evidence-based approach exemplified in Fig. 1b. The procedure returns TRUE for a pair of molecules, m1 and m2, if the two molecules are identical (more accurately, if there is no evidence that the molecules are not identical):
+<code>RingSystems/superpose.py</code>
+
+In the scenario considering stereochemistry (i.e. tetrahedral atom configuration), pairs of molecules were tested for identity according to a procedure that builds on the evidence-based approach. The procedure returns TRUE for a pair of molecules, m1 and m2, if the two molecules are identical (more accurately, if there is no evidence that the molecules are not identical):
 - If the constitution of m1 and m2 is distinct (based on their SMILES notations, with any stereochemical information removed):
     - return FALSE
 - If the constitution of m1 and m2 is identical (based on their SMILES notations, with any stereochemical information removed):
@@ -44,5 +65,4 @@ In the scenario considering stereochemistry (i.e. tetrahedral atom configuration
                     - return TRUE
     - return FALSE
 
-<code>RingSystems/superpose.py</code>
 
