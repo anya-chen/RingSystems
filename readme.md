@@ -3,42 +3,39 @@
 This is the code used in the cheminformatics analysis for ring systems in natural prodcuts, for more details please see the publication: XXX (to be added) 
 
 ### Requirements
-Anaconda (or minicoda) and Git should be installed. 
-Lisence is needed to use [OpenEye](https://www.eyesopen.com) applications and toolkits.
-<code>
-    git clone https://github.com/anya-chen/RingSystems
-    </code>  
-<code>
-    cd RingSystems
-    </code>
-<code>
-    conda env create -n ringsys -f environment.yml
-    </code>
-<code>
-    conda activate ringsys
-    </code>
-<code>
-    pip install -e .
-</code>
-If you are installing manually:
-Create ringsys env with python 3.8 and rdkit
-<code>conda create -n ringsys python=3.8</code>
-<code>conda activate ringsys</code>
-<code>conda install -c conda-forge rdkit</code>
+Anaconda (or minicoda) and Git should be installed.   
+Lisence is needed to use [OpenEye](https://www.eyesopen.com) applications and toolkits.  
+```
+git clone https://github.com/anya-chen/RingSystems  
+cd RingSystems  
+conda env create -n ringsys -f environment.yml  
+conda activate ringsys  
+pip install -e .  
+```
+If you are installing manually:  
+- Create ringsys env with python 3.8 and rdkit  
+```
+conda create -n ringsys python=3.8
+conda activate ringsys
+conda install -c conda-forge rdkit
+```  
+- Install chembl_structure_pipline  
+    
+```conda install -c conda-forge chembl_structure_pipeline```  
 
-Install chembl_structure_pipline
-<code>conda install -c conda-forge chembl_structure_pipeline</code>
-Install oepython
-<code>conda install -c openeye openeye-toolkits</code>
-Install scikit-learn, numpy, pandas, seaborn
+- Install oepython  
+
+```conda install -c openeye openeye-toolkits```  
+
+- Install scikit-learn, numpy, pandas, seaborn
 
 
 ### Input datasets needed
-- Data_prep/get_refined_coconut.py and Data_prep/get_organism_sets.py  
+- <code>Data_prep/get_refined_coconut.py and Data_prep/get_organism_sets.py</code>  
     coconut.sourceNP.csv: from https://coconut.naturalproducts.net/download MongoDB dump, version 2020-10
-- Preprocessing/preprocess_Zinc.py  
+- <code>Preprocessing/preprocess_Zinc.py</code>  
     zinc20/ and zinc_catalogs/: in-stock subset and biogenic sets from ZINC 20 database: https://zinc20.docking.org/
-- Preprocessing/preprocessing_approveddrug.py  
+- <code>Preprocessing/preprocessing_approveddrug.py</code>  
     approveddrug.sdf: from https://go.drugbank.com/, version 5.1.8
     
     
