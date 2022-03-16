@@ -53,7 +53,7 @@ From a single compound more than one ring system may be derived. Multiple occurr
 
 
 
-### Algorithm to identify if two molecules are identical (if there is no evidence that the molecules are not identical)
+### Algorithm to test whether or not two molecules are identical (if there is no evidence that the molecules are not identical)
 <code>RingSystems/superpose.py</code>
 
 In the scenario considering stereochemistry (i.e. tetrahedral atom configuration), pairs of molecules were tested for identity according to a procedure that builds on the evidence-based approach. The procedure returns TRUE for a pair of molecules, m1 and m2, if the two molecules are identical (more accurately, if there is no evidence that the molecules are not identical):
