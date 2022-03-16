@@ -13,17 +13,17 @@ conda activate ringsys
 pip install -e .  
 ```
 If you are installing manually/using only certain part:  
-- Create ringsys env with python 3.8 and rdkit  
+- Create ringsys env with python 3.8 and [RDKit](https://www.rdkit.org/)  
 ```
 conda create -n ringsys python=3.8
 conda activate ringsys
 conda install -c conda-forge rdkit
 ```  
-- Install chembl_structure_pipline  
+- Install [ChEMBL Structure Pipline](https://github.com/chembl/ChEMBL_Structure_Pipeline)  
     
 ```conda install -c conda-forge chembl_structure_pipeline```  
 
-- Install oepython (openeye toolkits)  
+- Install [oepython (openeye toolkits)](https://docs.eyesopen.com/toolkits/python/quickstart-python/install.html)  
 
 ```conda install -c openeye openeye-toolkits```  
 
