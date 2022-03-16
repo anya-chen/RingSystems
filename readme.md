@@ -3,43 +3,40 @@
 This is the code used in the cheminformatics analysis for ring systems in natural prodcuts, for more details please see the publication: XXX (to be added) 
 
 ### Requirements
-Anaconda (or minicoda) and Git should be installed. 
-Lisence is needed to use [OpenEye](https://www.eyesopen.com) applications and toolkits.
-<code>
-    git clone https://github.com/anya-chen/RingSystems
-    </code>
-<code>
-    cd RingSystems
-    </code>
-<code>
-    conda env create -n ringsys -f environment.yml
-    </code>
-<code>
-    conda activate ringsys
-    </code>
-<code>
-    pip install -e .
-</code>
-If you are installing manually:
-Create ringsys env with python 3.8 and rdkit
-<code>conda create -n ringsys python=3.8</code>
-<code>conda activate ringsys</code>
-<code>conda install -c conda-forge rdkit</code>
+Anaconda (or minicoda) and Git should be installed.   
+Lisence is needed to use [OpenEye](https://www.eyesopen.com) applications and toolkits.  
+```
+git clone https://github.com/anya-chen/RingSystems  
+cd RingSystems  
+conda env create -n ringsys -f environment.yml  
+conda activate ringsys  
+pip install -e .  
+```
+If you are installing manually/using only certain part:  
+- Create ringsys env with python 3.8 and [RDKit](https://www.rdkit.org/)  
+```
+conda create -n ringsys python=3.8
+conda activate ringsys
+conda install -c conda-forge rdkit
+```  
+- Install [ChEMBL Structure Pipline](https://github.com/chembl/ChEMBL_Structure_Pipeline)  
+    
+```conda install -c conda-forge chembl_structure_pipeline```  
 
-Install chembl_structure_pipline
-<code>conda install -c conda-forge chembl_structure_pipeline</code>
-Install oepython
-<code>conda install -c openeye openeye-toolkits</code>
-Install scikit-learn, numpy, pandas, seaborn
+- Install [oepython (openeye toolkits)](https://docs.eyesopen.com/toolkits/python/quickstart-python/install.html)  
+
+```conda install -c openeye openeye-toolkits```  
+
+- Install scikit-learn, numpy, pandas, seaborn...
 
 
 ### Input datasets needed
-- Data_prep/get_refined_coconut.py and Data_prep/get_organism_sets.py  
-    coconut.sourceNP.csv: from https://coconut.naturalproducts.net/download MongoDB dump, version 2020-10
-- Preprocessing/preprocess_Zinc.py  
-    zinc20/ and zinc_catalogs/: in-stock subset and biogenic sets from ZINC 20 database: https://zinc20.docking.org/
-- Preprocessing/preprocessing_approveddrug.py  
-    approveddrug.sdf: from https://go.drugbank.com/, version 5.1.8
+- <code>Data_prep/get_refined_coconut.py and Data_prep/get_organism_sets.py</code>  
+    <code>coconut.sourceNP.csv</code>: from [COCONUT database](https://coconut.naturalproducts.net/download) MongoDB dump, version 2020-10
+- <code>Preprocessing/preprocess_Zinc.py</code>  
+    <code>zinc20/</code> and <code>zinc_catalogs/</code>: in-stock subset and biogenic sets from [ZINC 20 database](https://zinc20.docking.org/)
+- <code>Preprocessing/preprocessing_approveddrug.py</code>  
+    <code>approveddrug.sdf</code>: from [DrugBank](https://go.drugbank.com/), version 5.1.8
     
     
 ### Algorithm to get ring systems from molecules
@@ -56,7 +53,7 @@ From a single compound more than one ring system may be derived. Multiple occurr
 
 
 
-### Algorithm to identify if two molecules are identical (if there is no evidence that the molecules are not identical)
+### Algorithm to test whether or not two molecules are identical (if there is no evidence that the molecules are not identical)
 <code>RingSystems/superpose.py</code>
 
 In the scenario considering stereochemistry (i.e. tetrahedral atom configuration), pairs of molecules were tested for identity according to a procedure that builds on the evidence-based approach. The procedure returns TRUE for a pair of molecules, m1 and m2, if the two molecules are identical (more accurately, if there is no evidence that the molecules are not identical):
