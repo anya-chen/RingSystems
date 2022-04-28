@@ -49,8 +49,6 @@ In order to obtain the ring systems the following algorithm was applied to each 
 3. The resulting ring systems (i.e. processed ring atom sets) are extended by all atoms directly connected to the ring via any type of bond other than a single bond.
 4. All other substituents are replaced by a hydrogen atom.  
 
-From a single compound more than one ring system may be derived. Multiple occurrences of a specific ring system in one and the same molecule increase the count of ring systems by 1 
-
 
 
 ### Algorithm to test whether or not two molecules are identical (if there is no evidence that the molecules are not identical)
