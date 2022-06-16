@@ -1,6 +1,6 @@
 # RingSystems
 ## Ring systems in natural products: structural diversity, physicochemical properties, and coverage by synthetic compounds
-This is the code used in the cheminformatics analysis for ring systems in natural prodcuts, for more details please see the publication: XXX (to be added) 
+This is the code used in the cheminformatics analysis for ring systems in natural prodcuts, for more details please see the publication: [Natural Product Reports, 2022, DOI: 10.1039/D2NP00001F](https://ww.doi.org/10.1039/D2NP00001F) 
 
 ### Requirements
 Anaconda (or minicoda) and Git should be installed.   
