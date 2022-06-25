@@ -63,7 +63,7 @@ In the scenario considering stereochemistry (i.e. tetrahedral atom configuration
         - For each pair of matching atoms:
             - If the configuration of exactly one atom is not specified:
                 - Add the unspecified atom to unspecified_atoms (a list of atoms for which their configuration will be enumerated)
-        - Enumerate all possible enantiomers based on all atoms in unspecified_atoms (this results in 2n enantiomers, where n is the number of atoms in unspecified_atoms)
+        - Enumerate all possible enantiomers based on all atoms in unspecified_atoms (this results in 2<sup>n</sup> enantiomers, where n is the number of atoms in unspecified_atoms)
         - For each enantiomer:
             - Test whether m1 and m2 can be superposed (with the HasSubstructMatch function in RDKit; this time with useChirality=True) 
                 - If yes: 
