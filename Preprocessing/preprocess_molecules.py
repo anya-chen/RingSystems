@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from cheminformatics import MoleculePreprocessorExtended
+from src import MoleculePreprocessorExtended
 from rdkit import RDLogger
 from rdkit import Chem
 

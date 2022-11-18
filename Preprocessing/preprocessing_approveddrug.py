@@ -2,7 +2,6 @@ import os
 from pathlib import Path
 import csv
 from preprocess_molecules import *
-from cheminformatics import MoleculePreprocessorExtended
 from rdkit import RDLogger
 from rdkit import Chem
 from rdkit.Chem import PandasTools
